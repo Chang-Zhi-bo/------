@@ -372,11 +372,11 @@ p {
 	background-size: cover; 
 }
 .gallery-grid a.agilefig.gallery-img5{
-    background: url(../images/g4.jpg) no-repeat center 0px; 
+    background: url(../images/day5.jpg) no-repeat center 0px; 
 	background-size: cover; 
 }
 .gallery-grid a.agilefig.gallery-img6{
-    background: url(../images/g4.jpg) no-repeat center 0px; 
+    background: url(../images/day6.jpg) no-repeat center 0px; 
 	background-size: cover; 
 }   
 .gallery-grid {
@@ -482,6 +482,8 @@ p {
 }
 .news-grid-left {
     padding: 0;
+    width:640px;
+    height: 360px;
 }
 .news-grid-right ul li {
     display: inline-block;
@@ -878,7 +880,7 @@ p.address {
     font-size: 2.5em;
 	outline:none;
 }
-.modal-body p {
+.modal-body p{
     font-weight: 300;
 } 
 /*-- //about-modal --*/
