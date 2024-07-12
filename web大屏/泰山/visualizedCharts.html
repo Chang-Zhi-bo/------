@@ -1,0 +1,101 @@
+<html style="font-size: 56.6px;">
+<head>
+<meta chartset="utf-8">
+<title>上方山</title>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+<link rel="stylesheet" href="./css/visualizedCharts.css"/>
+<link rel="stylesheet" href="./css/numbercss.css"/>
+</head>
+<body class="contains" style="font-size: 56.6px;">
+	<div class="header">
+		<div class = "title" >
+			上方山生态敏感性可视化系统
+		</div>
+		<div class="time"></div>
+		<script>
+		  var t = null;
+		  t = setTimeout(time, 1000); // 开始运行
+		
+		  function time() {
+			clearTimeout(t); // 清除定时器
+			var dt = new Date();
+			var y = dt.getFullYear();
+			var mt = dt.getMonth() + 1; // 月份从0开始，所以需要加1
+			var day = dt.getDate();
+			var h = dt.getHours();
+			var m = dt.getMinutes();
+			var s = dt.getSeconds();
+			// 确保月份和分钟至少是两位数
+			mt = mt < 10 ? '0' + mt : mt;
+			m = m < 10 ? '0' + m : m;
+			document.querySelector(".time").innerHTML = '当前时间：' + y + "年" + mt + "月" + day + "日" + h + "时" + m + "分" + s + "秒";
+			t = setTimeout(time, 1000); // 设定定时器，循环运行
+		  }
+		</script>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 item_left">
+				<div class="item_left_content">
+					<div class="industryChartDiv">
+						<div class="border">
+							<div id="industryBar"></div>
+						</div>
+					</div>
+					<div class="changeChartDiv" >
+						<div class="border">
+							<div id="changeLine"></div>
+						</div>
+					</div>
+				</div>
+	
+	</div>
+	<div class="col-md-4 item_center">
+		<div class="item_center_content">
+			
+			<p style="font-size: 18px;color: #cbcce1;">
+				<title style="font-size: 40px;">泰山的历史</title>
+				<br>上方山国家森林公园位于北京市房山区境内，
+				2014年公园官网显示，主峰海拔高为860米，总面积为340公顷，森林覆盖率90%以上，植物种类达625种，
+				其中有20个变种或变型，其中有中国特有的独根草、青檀、蚂蚱腿子、知母等植物，有银杏、省沽油等珍稀植物。
+				上方山具有2000年的佛教文化历史，是一座集自然、佛教和溶洞为一体的综合性的国家森林公园，
+				更是集山、林、洞、寺、泉、馆、坑景观为一体的综合性多功能景区，
+				被定为全国二十家示范型森林公园之一，为北京西南天然植物园绿色健身房。
+			<br>
+				上方山国家森林公园，是国家3A级旅游景区。位于北京市房山区韩村河镇，距北京市区约60公里，是山岳型自然风景区。自东魏孝静帝天平二年（535）就有僧人在这里开山建寺，管护森林。上方山总面积329.3公顷，景区总面积3.53平方公里，拥有华北地区唯一保存完好的原始次生林。
+				公园林地面积1.74平方公里，灌木林地面积1.63平方公里，森林覆盖率达90%以上。
+			<br>北京的气候为典型的北温带半湿润大陆性季风气候，夏季高温多雨，冬季寒冷干燥，春、秋短促。全年无霜期180～200天，西部山区较短。2007年平均降雨量483.9毫米，为华北地区降雨最多的地区之一。本区热量条件适中，年平均温度6—9℃，≥0℃的积温2800—3800℃，由于夏季东南季风迎面吹来，一般年降水量640—680毫米。降水季节分配很不均匀，全年降水的80%集中在夏季6、7、8三个月，7、8月有大雨。
+
+		</div>
+	</div>
+	
+			<div class="col-md-4 item_right">
+				<div class="item_right_content">
+					<div class="powerChartDiv">
+						<div class="border">
+							<div id="skillAcquisitionBar"></div>
+						</div>
+					</div>
+					<div class="playChatDiv">
+						<div class="border">
+							<div id="playCounts"></div>
+						</div>
+					</div>
+					<div class="areaChartDiv">
+						<div class="border">
+							<div id="roseChart"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./js/echarts.min.js"></script>
+<script src="./js/china.js"></script>
+<script src="./js/jquery.numscroll.js"></script>
+<script src="./js/visualizedCharts.js"></script>
+
+
+</html>

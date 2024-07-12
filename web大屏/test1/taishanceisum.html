@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Build/Cesium/Cesium.js"></script>
+    <link rel="stylesheet" href="./Build/Cesium/Widgets/widgets.css">
+</head>
+<body>
+    <div id="cesiumContainer"></div>
+    <script>
+        Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhYmJkYmQ5Ny0xNTY4LTQ0NmYtYThmYy01ZmZiNjlkOWU4NDEiLCJpZCI6MTQzODMyLCJpYXQiOjE2ODU2OTY0NjF9.2jUiy_sPFbhlXCID0-Hq7Fq3d1viIPzU1eq-4lk5xy4";
+        var viewer = new Cesium.Viewer("cesiumContainer", {
+            terrainProvider: Cesium.createWorldTerrain({
+                requestVertexNormals: true,
+                requestWaterMask: true
+            })
+        });
+
+        /*var locations = [
+            Cesium.Cartesian3.fromDegrees(115.785985, 39.652791, 10000.0),
+            Cesium.Cartesian3.fromDegrees(115.864778, 39.704547, 10000.0)
+        ];
+
+        function flyTo(location, index) {
+            viewer.camera.flyTo({
+                destination: location,
+                orientation: {
+                    heading: Cesium.Math.toRadians(0.0), // 方向
+                    pitch: Cesium.Math.toRadians(-30.0), // 俯仰角
+                    roll: 0.0 // 翻滚角
+                },
+                duration: 3, // 飞行持续时间（秒）
+                complete: function() {
+                    // 当飞行完成时，飞往下一个位置
+                    //if (index < locations.length - 1) {
+                      //  flyTo(locations[index + 1], index + 1);
+                    //}
+                }
+            });
+        }*/
+        var range = new Cesium.Rectangle(
+Cesium.Math.toRadians(115.785985),
+Cesium.Math.toRadians(39.652791),
+Cesium.Math.toRadians(115.864778),
+Cesium.Math.toRadians(39.704547)
+);
+viewer.scene.camera.flyTo({destination:range})
+
+        viewer.dataSources.add(Cesium.GeoJsonDataSource.load('Test.geojson', {
+            stroke: Cesium.Color.YELLOW,
+            strokewidth: 1, 
+            clampToGround: true
+        }));
+
+
+
+        // 开始飞行到第一个位置
+       flyTo(locations[0], 0);
+    </script>
+</body>
+</html>
